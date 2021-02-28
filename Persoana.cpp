@@ -33,7 +33,7 @@ void Persoana::setSex(char sex_) {
     if (sex_ == 'M' || sex_ == 'F') {
         sex = sex_;
     } else {
-        sex = NULL;
+        sex = '\0';
         cout << "Valoare introdusa incorecta, a fost aplicata valoarea NULL";
     }
 }
@@ -49,4 +49,11 @@ int Persoana::getAnNastere() {
 
 char Persoana::getSex() {
     return sex;
+}
+
+// metode
+void Persoana::seteazaValori(string nume_, int anNastere_, char sex_) {
+    this->setNume(nume_);
+    this->setAnNastere(anNastere_);
+    this->setSex(sex_);
 }

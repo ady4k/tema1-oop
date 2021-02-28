@@ -30,6 +30,12 @@ public:
     int getAnNastere();
     char getSex();
 
+    // metode
+    void seteazaValori(string nume_, int anNastere_, char sex_);
+
+    friend istream& operator>>(istream &in, Persoana &persoana);
+    friend ostream& operator<<(ostream &out, Persoana &persoana);
+
 };
 
 

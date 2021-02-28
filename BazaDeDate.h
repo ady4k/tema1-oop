@@ -11,19 +11,26 @@ class BazaDeDate {
 private:
     Persoana *persoane;
     static int nrPersoane;
+    static int dimensiune;
 
 public:
     // constructor & destructor
     BazaDeDate();
+    BazaDeDate(int dimensiune_);
+    BazaDeDate(const BazaDeDate &other);
     ~BazaDeDate();
 
     // metode
     void initializare(int nrPersoane_);
-    void seteazaValori(string nume_, int anNastere_, char sex_);
+    void extindere();
+    void micsorare();
+    void stergere(int nrPers);
     void adaugaPersoana(string nume_, int anNastere_, char sex_);
     void stergePersoana(string nume_);
     void stergePersoana(int anNastere_);
     void stergePersoana(char sex_);
+    void sortare(bool optiune);
+    void afisare();
     void afisareAlfabetic();
     void afisareVarsta();
 };
