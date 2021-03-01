@@ -5,13 +5,13 @@
 #ifndef TEMA1_OOP_BAZADEDATE_H
 #define TEMA1_OOP_BAZADEDATE_H
 
-#include "Persoana.cpp"
+#include "Persoana.h"
 
 class BazaDeDate {
 private:
     Persoana *persoane;
-    static int nrPersoane;
-    static int dimensiune;
+    int nrPersoane;
+    int dimensiune;
 
 public:
     // constructor & destructor

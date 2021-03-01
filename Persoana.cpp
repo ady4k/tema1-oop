@@ -3,11 +3,12 @@
 //
 
 #include "Persoana.h"
-#include <iostream>
 
 // constructori & destructori
 Persoana::Persoana() {
-
+    nume = "";
+    anNastere = NULL;
+    sex = '\0';
 }
 
 Persoana::Persoana(string nume_, int anNastere_, char sex_) {
@@ -16,9 +17,7 @@ Persoana::Persoana(string nume_, int anNastere_, char sex_) {
     sex = sex_;
 }
 
-Persoana::~Persoana() {
-
-}
+Persoana::~Persoana() = default;
 
 // setteri
 void Persoana::setNume(string nume_) {
