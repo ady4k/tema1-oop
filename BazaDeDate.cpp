@@ -43,8 +43,8 @@ void BazaDeDate::initializare(int nrPersoane_) {
 void BazaDeDate::extindere() {
     dimensiune++;
     if (dimensiune > 1) {
-        Persoana *temp = new Persoana[dimensiune];
-        for(int i = 0; i < dimensiune; i++) {
+        auto *temp = new Persoana[dimensiune];
+        for(int i = 0; i < nrPersoane; i++) {
             temp[i] = persoane[i];
         }
         delete [] persoane;
@@ -67,7 +67,7 @@ void BazaDeDate::micsorare() {
 }
 
 void BazaDeDate::stergere(int nrPers) {
-    for (int i = nrPers; i < nrPersoane; i++) {
+    for (int i = nrPers; i < nrPersoane - 1; i++) {
         persoane[i] = persoane[i + 1];
     }
     nrPersoane--;
@@ -106,6 +106,18 @@ void BazaDeDate::stergePersoana(char sex_) {
             stergere(i);
         }
     }
+}
+
+void BazaDeDate::modificaPersoana(int nrPers, string nume_) {
+    persoane[nrPers - 1].setNume(nume_);
+}
+
+void BazaDeDate::modificaPersoana(int nrPers, int anNastere_) {
+    persoane[nrPers - 1].setAnNastere(anNastere_);
+}
+
+void BazaDeDate::modificaPersoana(int nrPers, char sex_) {
+    persoane[nrPers - 1].setSex(sex_);
 }
 
 void BazaDeDate::sortare(bool optiune) {

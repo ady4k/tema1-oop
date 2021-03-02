@@ -29,6 +29,9 @@ public:
     void stergePersoana(string nume_);
     void stergePersoana(int anNastere_);
     void stergePersoana(char sex_);
+    void modificaPersoana(int nrPers, string nume_);
+    void modificaPersoana(int nrPers, int anNastere_);
+    void modificaPersoana(int nrPers, char sex_);
     void sortare(bool optiune);
     void afisare();
     void afisareAlfabetic();
