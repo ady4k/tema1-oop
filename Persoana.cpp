@@ -22,7 +22,7 @@ Persoana::~Persoana() = default;
 // setteri
 void Persoana::setNume(string nume_) {
     if (nume_.length() > 100) {
-        cout << "Numele introdus are prea multe caractere. Numele a fost setat gol";
+        cout << "Numele introdus are prea multe caractere. Numele a fost setat gol\n";
         nume = "";
     } else {
         nume = nume_;
@@ -32,10 +32,10 @@ void Persoana::setNume(string nume_) {
 void Persoana::setAnNastere(int anNastere_) {
     if (anNastere_) {
         if (anNastere_ < 1900) {
-            cout << "Valoarea introdusa este prea mica!, anul nasterii a fost setat la 1900.";
+            cout << "Valoarea introdusa este prea mica!, anul nasterii a fost setat la 1900.\n";
             anNastere = 1900;
         } else if (anNastere_ > 2021) {
-            cout << "Valoarea introdusa este prea mare!, anul nasterii a fost setat la 2021.";
+            cout << "Valoarea introdusa este prea mare!, anul nasterii a fost setat la 2021.\n";
             anNastere = 2021;
         } else {
             anNastere = anNastere_;
@@ -50,7 +50,7 @@ void Persoana::setSex(char sex_) {
         sex = sex_;
     } else {
         sex = '\0';
-        cout << "Valoare introdusa incorecta, a fost aplicata valoarea NULL";
+        cout << "Valoare introdusa incorecta, a fost aplicata valoarea NULL\n";
     }
 }
 

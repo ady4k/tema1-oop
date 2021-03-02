@@ -20,7 +20,7 @@ BazaDeDate::BazaDeDate(int dimensiune_) {
 BazaDeDate::BazaDeDate(const BazaDeDate &other) {
     nrPersoane = other.dimensiune;
     if (dimensiune < 1) {
-        persoane = nullptr;
+        persoane = NULL;
     } else {
         persoane = new Persoana[dimensiune];
         for(int i = 0; i < dimensiune; i++) {
@@ -43,7 +43,7 @@ void BazaDeDate::initializare(int nrPersoane_) {
 void BazaDeDate::extindere() {
     dimensiune++;
     if (dimensiune > 1) {
-        auto *temp = new Persoana[dimensiune];
+        Persoana *temp = new Persoana[dimensiune];
         for(int i = 0; i < nrPersoane; i++) {
             temp[i] = persoane[i];
         }
@@ -128,7 +128,7 @@ void BazaDeDate::sortare(bool optiune) {
             for(int j = 0; j < nrPersoane - 1; j++) {
                 string nume1 = persoane[j].getNume();
                 string nume2 = persoane[j + 1].getNume();
-                if (nume1.compare(nume2) < 0) {
+                if (nume1.compare(nume2) > 0) {
                     Persoana aux = persoane[j];
                     persoane[j] = persoane[j + 1];
                     persoane[j + 1] = aux;

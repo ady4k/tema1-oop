@@ -1,17 +1,18 @@
 #include "BazaDeDate.h"
 #include "ctime"
+#include <cstdlib>
 
 bool iesire();
 
 int main() {
 
-    time_t t = time(nullptr);
+    time_t t = time(NULL);
     tm *timePtr = localtime(&t);
 
     bool exit = false;
     int i;
     BazaDeDate bazaDeDate;
-    bazaDeDate.adaugaPersoana("Penis", 1955, 'M');
+    bazaDeDate.adaugaPersoana("Ben Dover", 1955, 'M');
     bazaDeDate.adaugaPersoana("Paris", 1967, 'F');
     do {
         cout << "1. Afiseaza toate persoanele in ordine alfabetica\n"
