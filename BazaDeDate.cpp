@@ -12,6 +12,7 @@ BazaDeDate::BazaDeDate() {
 
 BazaDeDate::BazaDeDate(int dimensiune_) {
     nrPersoane = 0;
+    dimensiune = dimensiune_;
     persoane = new Persoana[dimensiune_];
     initializare(nrPersoane);
 }
@@ -84,7 +85,7 @@ void BazaDeDate::adaugaPersoana(string nume_, int anNastere_, char sex_) {
 }
 
 void BazaDeDate::stergePersoana(string nume_) {
-    for(int i = 0; i <= nrPersoane; i++) {
+    for(int i = 0; i < nrPersoane; i++) {
         if (persoane[i].getNume() == nume_) {
             stergere(i);
         }
@@ -92,7 +93,7 @@ void BazaDeDate::stergePersoana(string nume_) {
 }
 
 void BazaDeDate::stergePersoana(int anNastere_) {
-    for(int i = 0; i <= nrPersoane; i++) {
+    for(int i = 0; i < nrPersoane; i++) {
         if (persoane[i].getAnNastere() == anNastere_) {
             stergere(i);
         }
@@ -100,7 +101,7 @@ void BazaDeDate::stergePersoana(int anNastere_) {
 }
 
 void BazaDeDate::stergePersoana(char sex_) {
-    for(int i = 0; i <= nrPersoane; i++) {
+    for(int i = 0; i < nrPersoane; i++) {
         if (persoane[i].getSex() == sex_) {
             stergere(i);
         }
@@ -146,17 +147,22 @@ void BazaDeDate::sortare(bool optiune) {
 }
 
 void BazaDeDate::afisare() {
-    for (int i = 0; i <= nrPersoane; i++) {
-        cout << "Persoana " << i << " se numeste " << persoane[i].getNume() << ", este nascuta in " << persoane[i].getAnNastere() << " si este de sex " << persoane[i].getSex() << "\n";
+    for (int i = 0; i < nrPersoane; i++) {
+        //cout << "Persoana " << i << " se numeste " << persoane[i].getNume() << ", este nascuta in " << persoane[i].getAnNastere() << " si este de sex " << persoane[i].getSex() << "\n";
+        cout << "Persoana " << i + 1 << persoane[i];
     }
 }
 
 void BazaDeDate::afisareAlfabetic() {
-    sortare(true);
+    if (nrPersoane > 1) {
+        sortare(true);
+    }
     afisare();
 }
 
 void BazaDeDate::afisareVarsta() {
-    sortare(false);
+    if (nrPersoane > 1) {
+        sortare(false);
+    }
     afisare();
 }

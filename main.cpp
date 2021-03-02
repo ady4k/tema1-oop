@@ -11,6 +11,8 @@ int main() {
     bool exit = false;
     int i;
     BazaDeDate bazaDeDate;
+    bazaDeDate.adaugaPersoana("Penis", 1955, 'M');
+    bazaDeDate.adaugaPersoana("Paris", 1967, 'F');
     do {
         cout << "1. Afiseaza toate persoanele in ordine alfabetica\n"
                 "2. Afiseaza toate persoanele in ordinea crescatoare a varstelor\n"
@@ -22,28 +24,28 @@ int main() {
         cin >> i;
         switch (i) {
             case 1: {
-                system("cls");
+                system("CLS");
                 bazaDeDate.afisareAlfabetic();
                 system("pause");
                 exit = iesire();
                 break;
             }
             case 2: {
-                system("cls");
+                system("CLS");
                 bazaDeDate.afisareVarsta();
                 system("pause");
                 exit = iesire();
                 break;
             }
             case 3: {
-                system("cls");
+                system("CLS");
                 //bazaDeDate.adaugaPersoana();
                 system("pause");
                 exit = iesire();
                 break;
             }
             case 4: {
-                system("cls");
+                system("CLS");
                 cout << "Introduceti numele al caror persoane vor fi sterse:";
                 string nume;
                 cin >> nume;
@@ -53,7 +55,7 @@ int main() {
                 break;
             }
             case 5: {
-                system("cls");
+                system("CLS");
                 cout << "Introduceti varsta persoanelor care vor fi sterse:";
                 int varsta;
                 cin >> varsta;
@@ -63,7 +65,7 @@ int main() {
                 break;
             }
             case 6: {
-                system("cls");
+                system("CLS");
                 cout << "Introduceti sexul persoanelor care vor fi sterse:";
                 char sex;
                 cin >> sex;
@@ -73,18 +75,18 @@ int main() {
                 break;
             }
             case 7: {
-                system("cls");
+                system("CLS");
                 system("pause");
                 exit = iesire();
                 break;
             }
             default: {
-                system("cls");
+                system("CLS");
                 cout << "Introduceti un numar de la 1 la 7!";
                 break;
             }
         }
-    system("cls");
+    system("CLS");
     } while(!exit);
     return 0;
 }
@@ -97,11 +99,11 @@ bool iesire() {
     cin >> acord;
     do {
         if (acord == 'Y' || acord == 'y') {
-            system("cls");
+            system("CLS");
             exit = true;
             iesit = true;
         } else if (acord == 'N' || acord == 'n') {
-            system("cls");
+            system("CLS");
             iesit = true;
         } else {
             system("cls");
